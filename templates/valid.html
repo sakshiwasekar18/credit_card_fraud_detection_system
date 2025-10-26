@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Validated</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'valid': '#10b981',  // Green
+                        'accent': '#4f46e5',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-valid { color: #10b981; }
+    </style>
+</head>
+
+<body class="bg-gray-900 min-h-screen flex items-center justify-center font-sans p-4">
+
+    <div id="app-container" class="w-full max-w-xl bg-gray-800 shadow-2xl rounded-xl p-10 md:p-16 text-center">
+        
+        <div class="text-7xl mb-6 text-valid">
+            ✅
+        </div>
+        
+        <h2 class="text-4xl font-bold text-white mb-3">
+            Transaction Validated Successfully
+        </h2>
+        <p class="text-gray-300 text-lg mb-8">
+            The model validates this transaction as normal and safe.
+        </p>
+        
+        <div class="w-full max-w-xs mx-auto bg-gray-700 rounded-xl p-6 shadow-xl mb-10">
+            <p class="text-gray-400 text-sm uppercase tracking-wider mb-2">Confidence Score</p>
+            <p id="probability" class="text-4xl font-extrabold text-valid">
+                --%
+            </p>
+        </div>
+
+        <a href="home.html">
+            <button class="bg-accent hover:bg-indigo-600 text-white font-bold py-3 px-8 rounded-full transition duration-200 shadow-md focus:outline-none focus:ring-4 focus:ring-accent/50">
+                Analyze New Transaction
+            </button>
+        </a>
+    </div>
+
+    <script>
+        window.onload = () => {
+            const params = new URLSearchParams(window.location.search);
+            const probabilityParam = params.get('prob');
+
+            if (probabilityParam !== null) {
+                const probability = parseFloat(probabilityParam);
+                document.getElementById('probability').textContent = `${(probability * 100).toFixed(2)}%`;
+            } else {
+                document.getElementById('probability').textContent = 'N/A';
+            }
+        };
+    </script>
+</body>
+</html>
