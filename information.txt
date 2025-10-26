@@ -1,0 +1,51 @@
+This list (from "Transaction Amount" to "Email Address Domain" and finally "CLASS") represents the ideal feature set for a comprehensive fraud detection system.
+
+The dataset you are working with contains European credit card transactions that occurred over a period of two days in September 2013. The goal of the data is to identify and predict which transactions are fraudulent.
+In short, it means:
+The Anonymized Features (V1 - V28)
+The columns labeled V1, V2, V3, ... up to V28 are the result of applying a data transformation technique called Principal Component Analysis (PCA).
+
+What PCA Does: PCA transforms the original set of features (which would include sensitive details like the cardholder's address, specific time of day, merchant ID, etc.) into a new, smaller set of uncorrelated features.
+
+What V1-V28 Represent: They are the principal components. You cannot know exactly what each one means (e.g., V1 might be a combination of time and location; V2 might relate to the frequency of the card's use).
+
+Why Anonymization is Necessary: To protect the identity of the cardholders and the integrity of the bank's security methods, the raw, personally identifiable features cannot be shared publicly. The V-variables retain the predictive power needed for the machine learning model without revealing the sensitive details.
+
+The Values: Since the data is scaled by PCA, the values are standardized, meaning they are centered around zero and typically range between positive and negative values.
+It's the "Before" Picture: This is what the dataset looked like before it was cleaned up and anonymized for public sharing.
+It Explains V1-V28: The V1 through V28 variables in your actual project are mathematical transformations of these original 28 features (and others not listed).
+
+
+1. Transaction Amount
+2. Transaction Time
+3. Merchant Category Code (MCC)
+4. Merchant ID
+5. Cardholder's Country
+6. Cardholder's ZIP Code
+7. Cardholder's Age
+8. Card Type (Visa, Mastercard, etc.)
+9. Transaction Type (Online, In-store, etc.)
+10. Number of Transactions in a Time Window
+11. Average Transaction Amount
+12. Standard Deviation of Transaction Amount
+13. Frequency of Transactions
+14. Distance between Transaction Location and Cardholder's Location
+15. IP Address Geolocation
+16. BIN (Bank Identification Number)
+17. Number of Declined Transactions
+18. Time since Last Transaction
+19. Time of Day
+20. Day of the Week
+21. Month of the Year
+22. Card Expiration Date
+23. Account Balance
+24. Credit Limit
+25. Transaction Currency
+26. Card Issuer Country
+27. Phone Number Country Code
+28. Email Address Domain
+29.AMOUNT
+30. CLASS
+
+These features provide valuable information for detecting fraudulent activities in credit card transactions.
+

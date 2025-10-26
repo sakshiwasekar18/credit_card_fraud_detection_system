@@ -1,0 +1,58 @@
+------------------------------------------------------------------
+
+1. DATABASE AND SENSITIVE FILES
+
+------------------------------------------------------------------
+
+Ignore local database files (SQLite, etc.)
+
+*.db
+*.sqlite
+*.sqlite3
+
+Ignore environment variable files that hold secrets
+
+.env
+
+------------------------------------------------------------------
+
+2. LARGE DATA AND MODEL FILES
+
+------------------------------------------------------------------
+
+These files are explicitly ignored to prevent them from being committed,
+
+especially if they exceed GitHub's size limit.
+
+creditcard.csv
+fraud_values.csv
+valid_values.csv
+fraud_detection_model.joblib
+
+------------------------------------------------------------------
+
+3. PYTHON ENVIRONMENT AND JUPYTER NOTEBOOK/NODE FILES
+
+------------------------------------------------------------------
+
+Ignore virtual environment folders
+
+venv/
+env/
+
+Ignore Node.js dependency folder
+
+node_modules/
+
+Ignore VS Code configuration files
+
+.vscode/
+
+Ignore compiled Python objects
+
+pycache/
+*.pyc
+
+Ignore Jupyter Notebook checkpoints
+
+.ipynb_checkpoints/
